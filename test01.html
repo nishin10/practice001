@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="utf-8">
+	<title>test</title>
+<!--	<link rel ="stylesheet" href="style01.css"> -->
+	<style>
+	body{
+		background: gray;
+		text-align: center;
+		font-size:16px;
+		color:white;
+		font-family:monospace;
+	}
+	#result {
+		margin: 30px auto;
+		width: 200px;
+		height: 100px;
+		line-height: 100px;
+		font-size: 40px;
+		font-weight: bold;
+		background: #f44568;
+		box-shadow: 0 2px 10px rgba(0, 0, 0, .3)
+	}
+	#button{
+		margin: 0 auto;
+		width: 200px;
+		padding: 6px;
+		border-radius: 5px;
+		background: blue;
+		box-shadow: 0 4px 0 orange;
+		cursor: pointer;
+	}
+	#button:hover{
+		opacity:0.3;
+	}
+	
+	#button:pushed{
+		margin-top:32px;
+		box-shadow: 0 2px 0 orange;
+	}
+	</style>
+</head>
+	<body>
+		<h1>TEST</h1>
+		<div id="result">???</div>
+		<div id="button">pushed</div>
+		
+		<script>
+			(function(){
+				"use strict";
+				document.getElementById('button').addEventListener('click', function(){
+				var results =['BLACK1', 'BLACK2', 'BLACK3',
+							  'PLATINUM1', 'PLATINUM2', 'PLATINUM3', 'PLATINUM4', 'PLATINUM5', 'PLATINUM6', 'PLATINUM7', 'PLATINUM8', 'PLATINUM9', 'PLATINUM10',
+							  'GOLD1',  'GOLD2',  'GOLD3',  'GOLD4',  'GOLD5',  'GOLD6',  'GOLD7',  'GOLD8',  'GOLD9', 'GOLD10', 'GOLD11',
+							  'GOLD12', 'GOLD13', 'GOLD14', 'GOLD15', 'GOLD16', 'GOLD17', 'GOLD18', 'GOLD19', 'GOLD20', 'GOLD21',
+							  'GOLD22', 'GOLD23', 'GOLD24', 'GOLD25', 'GOLD26', 'GOLD27', 'GOLD28', 'GOLD29', 'GOLD30', 'GOLD31',
+							  'GOLD32', 'GOLD33', 'GOLD34', 'GOLD35', 'GOLD36', 'GOLD37',
+							  'SILVER1',  'SILVER2',  'SILVER3',  'SILVER4',  'SILVER5',  'SILVER6',  'SILVER7',  'SILVER8',  'SILVER9',  'SILVER10',
+							  'SILVER11', 'SILVER12', 'SILVER13', 'SILVER14', 'SILVER15', 'SILVER16', 'SILVER17', 'SILVER18', 'SILVER19', 'SILVER20',
+							  'SILVER21', 'SILVER22', 'SILVER23', 'SILVER24', 'SILVER25', 'SILVER26', 'SILVER27', 'SILVER28', 'SILVER29', 'SILVER30',
+							  'SILVER31', 'SILVER32', 'SILVER33', 'SILVER34', 'SILVER35', 'SILVER36', 'SILVER37', 'SILVER38', 'SILVER39', 'SILVER40',
+							  'SILVER41', 'SILVER42', 'SILVER43', 'SILVER44', 'SILVER45', 'SILVER46', 'SILVER47', 'SILVER48', 'SILVER49', 'SILVER50']
+				var result = Math.floor(Math.random() * results.length);
+				document.getElementById('result').innerHTML = results[result];
+			});
+				document.getElementById('button').addEventListener('mousedown', function(){
+		  		this.className = 'pushed';
+			});
+				document.getElementById('button').addEventListener('mouseup', function(){
+				this.className = '';
+			});
+	  		})();
+		</script>
+		
+	</body>
+</html>
