@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="utf-8">
+	<title>テスト</title>
+	<style>
+	body{
+		background: gray;
+		text-align: center;
+		font-size:16px;
+		color:white;
+		font-family:monospace;
+	}
+	</style>
+</head>
+	<body>
+		<h1>TEST</h1>
+		
+		<form><input type="button" value="pushed" onClick="result()"></form>
+		
+		<script type="text/javascript">
+
+		function result() {
+			//抽選1
+			rand = Math.floor(Math.random()*100);
+			results = "BLACK"; //0～2（3%）
+			if (rand > 2) results = "PLATINUM"; //3～12（10%）
+			if (rand > 12) results = "GOLD"; //13～49（37%）
+			if (rand > 49) results = "SILVER"; //50～99（50%）
+			
+			//抽選2
+			if( results == "BLACK" ) hako = ['B1', 'B2', 'B3'];
+			if( results == "PLATINUM" ) hako = ['P1', 'P2', 'P3'];
+			if( results == "GOLD" ) hako = ['G1', 'G2', 'G3'];
+			if( results == "SILVER" ) hako = ['S1', 'S2', 'S3'];
+			
+			unit = Math.floor( Math.random()* hako.length );
+			
+			alert(hako[unit]);
+			
+		}
+		</script>
+		
+	</body>
+</html>
